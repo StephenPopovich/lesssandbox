@@ -4,15 +4,24 @@
 @secondary-color: #20b2aa;
 @line-height: 1em + 1em;
 
+
+//Text Color Mixin
+.text-color(@a) when (lightness(@a) >= 50%){
+  color: black;
+}
+
+.text-color(@a) when (lightness(@a) <= 50%){
+  color: white;
+}
 body{
   font-family: @font-family;
   background: @background-color;
   line-height: @line-height;
+  h1, h3{
+    .bordered
+  }
 }
 
-h1, h3{
-  .bordered
-}
 .primary-text{
   color: @primary-color;
 }
@@ -24,7 +33,21 @@ h1, h3{
 }
 .primary-btn:extend(.btn){
   background: @primary-color;
-  color: #fff;
+  .text-color(@primary-color);
+}
+ul#menu{
+  list-style: none;
+  background-color: lighten(@secondary-color, 50%);
+  li{
+    padding: 10px 0;
+    a{
+      color:@secondary-color;
+      text-decoration: none;
+      &:hover{
+        color: black;
+      }
+    }
+  }
 }
 
 .border-radius(@radius){
