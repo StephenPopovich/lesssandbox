@@ -1,3 +1,27 @@
 body {
-  background: blue;
+  font-family: Tahoma;
+  background: #f3f3f3;
+  line-height: 2em;
+}
+h1,
+h3 {
+  border-top: dotted 1px #000;
+  border-bottom: solid 2px #000;
+}
+.primary-text {
+  color: #3b5998;
+}
+.btn,
+.primary-btn {
+  padding: 10px 15px;
+  border: 0;
+  border-radius: 30px;
+}
+.primary-btn {
+  background: #3b5998;
+  color: #fff;
+}
+.bordered {
+  border-top: dotted 1px #000;
+  border-bottom: solid 2px #000;
 }
